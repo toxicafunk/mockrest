@@ -3,15 +3,19 @@ package es.richweb.rest.mocks
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-import fs2.Task
-import io.circe._
-import org.http4s._
+import cats.effect.IO
+
 import org.http4s.circe._
-import org.http4s.dsl._
+import io.circe.Json
+
+import org.http4s._
+import org.http4s.dsl.io._
+import org.http4s.dsl.impl.Root
+
 
 object CurrentDate {
 
-  val service = HttpService {
+  val service = HttpService[IO] {
     case GET -> Root / name => {
       val now: LocalDateTime = LocalDateTime.now()
       println(s"now: $name")
