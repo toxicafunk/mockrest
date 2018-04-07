@@ -18,5 +18,7 @@ object Server extends StreamApp[IO] {
       .bindHttp(port)
       .mountService(Greeter.service, "/")
       .mountService(CurrentDate.service, "/now")
+      .mountService(ProviderService.service, "/provider")
+      .mountService(StoreService.service, "/store")
       .serve
 }

@@ -14,9 +14,9 @@ import org.http4s.dsl.io._
 
 object StoreService {
   val service = HttpService[IO] {
-    case GET -> Root / "provider" / id => {
+    case GET -> Root / id => {
       println(s"id: $id")
-      Ok( Store(id, "404", Some("7A")).asJson )
+      Ok( Store(id, "201", Some("7A")).asJson )
     }
   }
 }

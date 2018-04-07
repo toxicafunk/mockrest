@@ -13,9 +13,9 @@ import org.http4s.dsl.impl.Root
 
 object ProviderService {
   val service = HttpService[IO] {
-    case GET -> Root / "provider" / id => {
+    case GET -> Root / id => {
       println(s"id: $id")
-      Ok( Provider(id, List(ProvidedSection("main", true))).asJson )
+      Ok( Provider(id, List(ProvidedSection("01", true))).asJson )
     }
   }
 }
