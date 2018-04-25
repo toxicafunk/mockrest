@@ -13,7 +13,8 @@ libraryDependencies ++= Seq(
   "org.http4s"     %% "http4s-circe"         % Http4sVersion,
   "org.http4s"     %% "http4s-dsl"           % Http4sVersion,
   "org.specs2"     %% "specs2-core"          % Specs2Version % "test",
-  "ch.qos.logback" %  "logback-classic"      % LogbackVersion
+  "ch.qos.logback" %  "logback-classic"      % LogbackVersion,
+  "io.monix" %% "monix" % "3.0.0-RC1"
 )
 
 libraryDependencies ++= Seq(
